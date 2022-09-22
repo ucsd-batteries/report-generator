@@ -1,0 +1,66 @@
+.table > :not(caption) > * > * {
+  padding: 0.2rem;
+  background-color: var(--bs-table-bg);
+  border-bottom-width: 1px;
+  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+
+.table {
+  margin-bottom: 0px;
+}
+
+.col {
+  padding-bottom: 2rem;
+}
+
+.accordion > * {
+  font-size: 0.9rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+  transition: 0.3s;
+  box-shadow: 4px 4px 4px var(--bs-gray-300);
+}
+
+.graph_name {
+  text-align: center;
+}
+
+.figure-caption {
+  text-align: center;
+}
+
+.card .read-more:hover {
+  font-size: 14px;
+}
+
+/* .card:hover { */
+  /*box-shadow: 4px 4px 4px var(--bs-gray-500);*/
+  /*transform: scale(1.005);*/
+/* } */
+
+#toc {
+  font-size: 16px;
+}
+
+/* when the screen is too wide, shrink width a bit by adding x-margin */
+
+@media (min-width: 1440px) {
+  .margin-max {
+    margin-left: 7.5rem !important;
+    margin-right: 7.5rem !important;
+  }
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  max-height: 45px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    transform: scale(0.5);
+  }
+}
