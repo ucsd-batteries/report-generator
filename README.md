@@ -17,19 +17,23 @@ conda env create -f environment.yml
 
 ## Usage
 
-1. Place plots in the `input` directory to be parsed and moved to the `assets/img` directory.
-2. Similarly, place data files in the `input` for the script to calculate cycle count and end dates.
-3. Run the script with `python generate_report.py`.
-4. The resulting html report `generated_report.html` will be placed in the root directory.
+1. Place plots in the [`./input/images`] directory to be parsed and moved to the `./assets/img` directory.
+2. Similarly, place summary data files (ex: `NP5_test_summary.csv`) in `./input/summary_data` for the script to calculate cycle count.
+3. Place downloaded [Testing Progress Tracker](https://docs.google.com/spreadsheets/d/1nAmstAEzmYJce6Vif8Z6ur3eQHhDitz8AH5MXsRy5Yo/edit?usp=sharing) from google sheets to `./input/progress_tracker` directory.
+4. Run the script with `python generate_report.py`.
+5. The resulting html report `generated_report.html` will be placed in the root directory.
+6. Lastly, run the following commands to generate the pdf report:
 
 ```bash
 conda activate report-generator
-python generate_report.py
+python rename_plots.py # rename and place plots in the right directory for the report
+python generate_report.py # generate the report with the correct data
 ```
 
 ## TODO
 
-- [ ] Allow data files to be parsed
+- [x] Allow data files to be parsed
+- [ ] Standardize all test progress tracker sheets
 - [ ] Allow for generalization with other tests
 - [ ] Create a template for compiled reports
 - [ ] Create a template for monthly reports
