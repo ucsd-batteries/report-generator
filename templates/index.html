@@ -112,12 +112,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for test in tests %}
+                            {% for key, value in timeline_table.items() %}
                             <tr>
-                                <td>{{test.pack_num}}</td>
-                                <td>{{test.test_name}}</td>
-                                <td>{{test.start}}</td>
-                                <td>{{test.end}}</td>
+                                <td>{{key}}</td>
+                                <td>{{value[0]}}</td>
+                                <td>{{value[1]}}</td>
+                                <td>{{value[2]}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
