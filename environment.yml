@@ -1,0 +1,5 @@
+name: report-generator
+channels:
+  - defaults
+dependencies:
+  - jinja2
