@@ -40,11 +40,14 @@ def calc_cycles(df):
     return cycles / rated_cap
 
 
+def write_html(html: str, fp: str, mode: str = 'w') -> None:
+    """Writes the html to a file"""
+    with open(fp, mode) as f:
+        f.write(html)
+
+
 def main():
     """Main function"""
-    # set logging level and formatting
-    logging.basicConfig(format='%(asctime)s | %(levelname)s: %(message)s', level=logging.INFO)
-
     # extract cycle count from summmary csvs
     cycle_counts = []
     summary_data_root = Path('./input/summary_data/')
@@ -77,10 +80,13 @@ def main():
                         np6_cycle_count=cycle_counts[1],
                         )
 
+
     # write the template to an HTML file
-    with open('generated_report.html', 'w') as f:
-        f.write(html)
+    write_html(html, 'nissan.html')
 
 if __name__ == '__main__':
-    logging.info('Starting report generation')
-    main()
+    # set logging level and formatting
+    logging.basicConfig(format='%(asctime)s | %(levelname)s: %(message)s', level=logging.INFO)
+    if input("Are you sure you want to generate the report? (y/n): ") == 'y':
+        logging.info('Starting report generation')
+        main()
