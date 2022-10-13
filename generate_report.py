@@ -46,6 +46,11 @@ def write_html(html: str, fp: str, mode: str = 'w') -> None:
         f.write(html)
 
 
+def backup(fp: Path) -> None:
+    """Backs up the file by renaming it with a '.back' suffix"""
+    backup_fp = fp.with_suffix('.back.html')
+    fp.rename(backup_fp)
+
 def main():
     """Main function"""
     # extract cycle count from summmary csvs
@@ -58,7 +63,7 @@ def main():
 
     # jinja2 setup
     env = Environment(loader=FileSystemLoader('templates'))
-    template = env.get_template('./index.html')
+    template = env.get_template('./nissan.html')
 
     timeline_table = dict()
     progress_tracker_root = Path('./input/progress_trackers/')
@@ -82,6 +87,9 @@ def main():
 
 
     # write the template to an HTML file
+    generated_html_fp = Path('./nissan.html')
+    if generated_html_fp.exists():
+        backup(generated_html_fp)    
     write_html(html, 'nissan.html')
 
 if __name__ == '__main__':
@@ -90,3 +98,4 @@ if __name__ == '__main__':
     if input("Are you sure you want to generate the report? (y/n): ") == 'y':
         logging.info('Starting report generation')
         main()
+        logging.info('Saved')
