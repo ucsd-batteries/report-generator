@@ -40,11 +40,19 @@ def calc_cycles(df):
     return cycles / rated_cap
 
 
+def write_html(html: str, fp: str, mode: str = 'w') -> None:
+    """Writes the html to a file"""
+    with open(fp, mode) as f:
+        f.write(html)
+
+
+def backup(fp: Path) -> None:
+    """Backs up the file by renaming it with a '.back' suffix"""
+    backup_fp = fp.with_suffix('.back.html')
+    fp.rename(backup_fp)
+
 def main():
     """Main function"""
-    # set logging level and formatting
-    logging.basicConfig(format='%(asctime)s | %(levelname)s: %(message)s', level=logging.INFO)
-
     # extract cycle count from summmary csvs
     cycle_counts = []
     summary_data_root = Path('./input/summary_data/')
@@ -55,7 +63,7 @@ def main():
 
     # jinja2 setup
     env = Environment(loader=FileSystemLoader('templates'))
-    template = env.get_template('./index.html')
+    template = env.get_template('./nissan.html')
 
     timeline_table = dict()
     progress_tracker_root = Path('./input/progress_trackers/')
@@ -77,10 +85,17 @@ def main():
                         np6_cycle_count=cycle_counts[1],
                         )
 
+
     # write the template to an HTML file
-    with open('generated_report.html', 'w') as f:
-        f.write(html)
+    generated_html_fp = Path('./nissan.html')
+    if generated_html_fp.exists():
+        backup(generated_html_fp)    
+    write_html(html, 'nissan.html')
 
 if __name__ == '__main__':
-    logging.info('Starting report generation')
-    main()
+    # set logging level and formatting
+    logging.basicConfig(format='%(asctime)s | %(levelname)s: %(message)s', level=logging.INFO)
+    if input("Are you sure you want to generate the report? (y/n): ") == 'y':
+        logging.info('Starting report generation')
+        main()
+        logging.info('Saved')

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Report</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Roboto.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+/>
+</head>
+
+<body style="font-family: Roboto, sans-serif;" data-bs-spy="scroll" data-bs-target="#toc">
+    <div class="col m-xl-5 m-4 m-sm-4 margin-max">
+        <div class="row pt-3" style="text-align: center;">
+            <div class="col">
+                <h1>Nissan Cycle Aging Report</h1>
+                <h5>Energy Storage Innovation Lab</h5>
+                <p style="margin-bottom: 0;">Date written: 2022-10-14</p>
+                <p>Written By: Ben</p>
+                <hr style="margin-bottom: 0;margin-top: 0;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Table of Contents</h2>
+                <nav id="toc" data-toggle="toc" style="font-size: 16px;"></nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Cycle Count</h2>
+                <div class="p-1">
+                    <h4 id="np5_cycle_status">Nissan Pack 5: Cycle 1186 of 2190</h4>
+                    <div class="progress">
+                        <div class="progress-bar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="np5-progress-bar" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+                <div class="p-1">
+                    <h4 id="np6_cycle_status">Nissan Pack 6: Cycle 1519 of 2190</h4>
+                    <div class="progress">
+                        <div class="progress-bar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="np6-progress-bar" style="width: 50%;">50%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Nomenclature</h2>
+                <div class="accordion" role="tablist" id="accordion-1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" role="tab" data-toc-skip="1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1" style="padding-top: 0.5rem;padding-right: 0.5rem;padding-bottom: 0.5rem;padding-left: 0.5rem;">Collapse</button></h2>
+                        <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
+                            <div class="accordion-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Terminology</th>
+                                                <th style="box-shadow: 0px 0px;">Definition</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>NP #</td>
+                                                <td>Nissan Pack. The number specifies which pack.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Aging</td>
+                                                <td>Refers to the type of test being conducted.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Pack / Module / Cell</td>
+                                                <td>Each pack has 8 modules in series. Each module has 2 cells. Therefore there are a total of 16 cells in a pack.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Characterization</td>
+                                                <td>Two charge and discharge cycles, followed by flicks. Characterization is conducted to characterize the battery’s capacity.<br></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Drive Cycle</td>
+                                                <td>A type of test conducted to allow calculation of the internal resistance for the battery.<br></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Aging</td>
+                                                <td>Simulates real life usage of the battery throughout its life cycle.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><sub>*See Appendix for examples of characterization, drive, and aging test cycles.</sub>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Timeline of all tests included in report</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Pack #</th>
+                                <th>Week of Aging/Char</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>5</td>
+                                <td>Aging 53</td>
+                                <td>10/02/2022</td>
+                                <td>10/10/2022</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>6</td>
+                                <td>Drive Cycle 16</td>
+                                <td>10/10/2022</td>
+                                <td>10/12/2022</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 style="padding-bottom: 1rem;">Test Specifications</h2>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Testing cycles are conducted in the following order</h5>
+                            <ol>
+                                <li>Characterization and drive cycle<br></li>
+                                <li>Characterization and aging<br></li>
+                                <li>Characterization and aging<br></li>
+                                <li>Characterization and aging<br></li>
+                                <li>Characterization and aging<br></li>
+                                <li>Repeat from beginning</li>
+                            </ol>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Testing Cycle Boundaries</h5>
+                            <ol>
+                                <li>The lower cell voltage limit is 2.9 V</li>
+                                <li>The upper cell voltage limit is 4.1 V</li>
+                                <li>The maximum current limit is 40 A</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Summary Graphs</h2>
+                <div class="card">
+                    <h4 class="graph_name card-header p-2">State of Health Summary</h4>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <figure class="figure"><img class="img-fluid figure-img" src="assets/img/NP5_SOH.jpg">
+                                        <figcaption class="figure-caption">NP5 SOH Summary</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure class="figure"><img class="img-fluid figure-img" src="assets/img/NP6_SOH.jpg">
+                                        <figcaption class="figure-caption">NP6 SOH Summary</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4 class="graph_name card-header p-2">Internal Resistance Summary</h4>
+                    <div class="card-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <figure class="figure"><img class="img-fluid figure-img" src="assets/img/NP5_IR.jpg">
+                                        <figcaption class="figure-caption">NP5 IR Summary</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-6">
+                                    <figure class="figure"><img class="img-fluid figure-img" src="assets/img/NP6_IR.jpg">
+                                        <figcaption class="figure-caption">NP6 IR Summary</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4 class="graph_name card-header p-2">Test Progress Gantt Chart</h4>
+                    <div class="card-body pb-0">
+                        <figure class="figure text-center"><img class="img-fluid figure-img" src="assets/img/gantt.jpg" style="width: 75%;">
+                            <figcaption class="figure-caption">Gantt Chart</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Recent Delays / Issues</h2>
+                <p>None</p>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Appendix</h2>
+            <p>Documents the test details</p>
+            <div class="col">
+                <div class="row">
+                    <h3>Characterization</h3>
+                    <div class="col">
+                        <figure class="figure">
+                            <img class="img-fluid figure-img" src="assets/img/nissan_char_current_voltage_graph.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="figure">
+                            <img class="img-fluid figure-img" src="assets/img/nissan_char_power_soc_graph.jpg" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Drive Cycle</h3>
+                    <div class="col">
+                        <figure class="figure">
+                            <img class="img-fluid figure-img" src="assets/img/nissan_drive_voltage_current_graph.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="figure">
+                            <img class="img-fluid figure-img" src="assets/img/nissan_drive_power_soc_graph.jpg" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Aging Cycle</h3>
+                    <div class="col">
+                        <figure class="figure">
+                            <img class="img-fluid figure-img" src="assets/img/nissan_aging_voltage_current_graph.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <figure class="figure">
+                            <img class="img-fluid figure-img" src="assets/img/nissan_aging_power_soc_graph.jpg" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="row justify-content-center">
+                <div class="col-sm-4 text-center p-0 m-0">
+                    <figure class="figure p-0 m-0">
+                        <img class="logo img-fluid figure-img" src="assets/img/UCSanDiegoLogo-Black.png" alt="">
+                    </figure>
+                </div>
+                <div class="col-sm-4 text-center p-0 m-0">
+                    <figure class="figure p-0 m-0">
+                        <img class="logo img-fluid figure-img float-left" src="assets/img/CERLogo.gif" alt="">
+                    </figure>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+    <script src="assets/js/progress_bar_parse.js"></script>
+</body>
+
+</html>

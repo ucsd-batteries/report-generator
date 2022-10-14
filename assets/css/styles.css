@@ -1,3 +1,15 @@
+/* to make sure the cards' text doesn't turn blue when the whole card is clickable */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+
+/* table stuff */
 .table > :not(caption) > * > * {
   padding: 0.2rem;
   background-color: var(--bs-table-bg);
@@ -20,7 +32,8 @@
 .card {
   margin-bottom: 1rem;
   transition: 0.3s;
-  box-shadow: 4px 4px 4px var(--bs-gray-300);
+  /*box-shadow: 4px 4px 4px var(--bs-gray-300);*/
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
 .graph_name {
@@ -31,13 +44,16 @@
   text-align: center;
 }
 
-.card .read-more:hover {
-  font-size: 14px;
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /* .card:hover { */
-  /*box-shadow: 4px 4px 4px var(--bs-gray-500);*/
-  /*transform: scale(1.005);*/
+
+/* box-shadow: 4px 4px 4px var(--bs-gray-500); */
+
+/* transform: scale(1.005); */
+
 /* } */
 
 #toc {
@@ -67,9 +83,3 @@
 }
 
 /* for printing */
-
-@media print {
-  .row {
-    break-inside: avoid-page;
-  }
-}
